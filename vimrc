@@ -127,7 +127,7 @@ func GitGrepword()
   normal! "zyiw
   call GitGrep(getreg('z'))
 endf
-nmap <C-x><C-x> :call GitGrepword()<CR>
+"nmap <C-x><C-x> :call GitGrepword()<CR>
 
 set tags=tags;/
 let g:PreviewBrowsers='google-chrome'
