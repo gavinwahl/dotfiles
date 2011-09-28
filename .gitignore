@@ -1,0 +1,8 @@
+/vim/undodir/*
+/vim/.netrwhist
+/xmonad/xmonad.o
+/xmonad/xmonad-x86_64-linux
+/xmonad/xmonad.hi
+/xmonad/xmonad.errors
+/vim/ruby/command-t/*.o
+/vim/ruby/command-t/*.so

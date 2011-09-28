@@ -1,0 +1,4 @@
+XTerm*background: #3a3a3a
+XTerm*foreground: #dfdfdf
+XTerm*font: -*-terminus-medium-*-*-*-14-*-*-*-*-*-*-*
+XTerm*termName:         xterm-256color

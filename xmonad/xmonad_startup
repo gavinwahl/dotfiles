@@ -1,0 +1,6 @@
+#! /bin/bash
+xscreensaver -nosplash
+xrdb ~/dotfiles/Xdefaults
+xmodmap ~/dotfiles/Xmodmap
+xrandr --output VGA-0 --right-of DVI-0 --preferred --output DVI-0 --preferred 
+xset b off
