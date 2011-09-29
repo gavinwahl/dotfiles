@@ -1,16 +1,16 @@
-Config { font = "-*-terminus-medium-*-*-*-20-*-*-*-*-*-*-*"
+Config { font = "Terminus"
        , bgColor = "black"
        , fgColor = "grey"
-       , position = TopW L 90
+       , position = Bottom
        , commands = [ Run Weather "KDEN" ["-t"," <tempF>F","-L","64","-H","77","--normal","green","--high","red","--low","lightblue"] 36000
                     , Run Cpu ["-L","3","-H","50","--normal","green","--high","red"] 10
                     , Run Memory ["-t","Mem: <usedratio>%"] 10
-                    , Run Swap [] 10
                     , Run Date "%a %b %_d %l:%M" "date" 10
                     , Run StdinReader
                     , Run Com "~/dotfiles/bin/only_uptime.sh" [] "load" 10
+                    , Run Com "sh" ["~/dotfiles/bin/gmail.sh"] "mail" 1000
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "<fc=#ee9a00>%date%</fc> } %StdinReader% { %load% | %cpu% | %memory% * %swap%    | %KDEN%"
+       , template = "<fc=#ee9a00>%date%</fc> } %StdinReader% { %load% | %cpu% | %memory% | %KDEN%%mail%"
        }

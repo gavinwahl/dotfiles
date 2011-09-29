@@ -96,11 +96,15 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
  
     , ((modm, xK_f), goToSelected defaultGSConfig)
 
+    , ((modm .|. shiftMask, xK_f), bringSelected defaultGSConfig)
+
     , ((modm, xK_s), scratchpadSpawnActionTerminal "xterm")
 
     , ((modm, xK_u), spawn "pkill dzen2" >> focusUrgent)
 
     , ((controlMask .|. modm, xK_l), spawn "xscreensaver-command -lock")
+    , ((mod4Mask, xK_l), spawn "xscreensaver-command -lock")
+
     -- launch dmenu
     , ((modm,               xK_p     ), spawn "exe=`dmenu_path | yeganesh` && eval \"exec $exe\"")
  
@@ -280,7 +284,8 @@ myLayout = mkToggle (single FULL) $ tiled ||| Mirror tiled ||| Full ||| Grid |||
 -- 'className' and 'resource' are used below.
 --
 myManageHook = composeAll
-    [ className =? "Gimp"           --> doFloat
+    [ className =? "MPlayer"        --> doFloat
+    , className =? "Gimp"           --> doFloat
     , resource  =? "desktop_window" --> doIgnore
     , resource  =? "kdesktop"       --> doIgnore
     , scratchpadManageHookDefault
