@@ -134,3 +134,6 @@ let g:PreviewBrowsers='google-chrome'
 let g:PreviewMarkdownExt='markdown,md,mkd,mkdn,mdown,page'
 
 let python_space_error_highlight = 1
+
+" strip trailing whitespace
+map gw :%s/\s\+$//:noh
