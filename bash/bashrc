@@ -109,6 +109,7 @@ p(){ echo `date '+%F %R: '` $@ >> ~/time_card; }
 export EDITOR=vim
 alias make='make -j 4'
 alias calc='emacs -f full-calc -nw'
+alias curl='curl --silent'
 
 export EC2_HOME=~/.ec2
 export PATH=$PATH:$EC2_HOME/bin
