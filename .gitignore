@@ -7,3 +7,5 @@
 /vim/ruby/command-t/*.o
 /vim/ruby/command-t/*.so
 /ion3/default-session*
+command-t/Makefile
+command-t/*.log
