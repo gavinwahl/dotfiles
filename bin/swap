@@ -1,0 +1,7 @@
+#! /bin/bash
+
+tmp=$(mktemp $(dirname "$1")/"$1_XXXXXX")
+
+mv "$1" "$tmp"
+mv "$2" "$1"
+mv "$tmp" "$2"

@@ -11,14 +11,19 @@ export HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoredups
 # ... or force ignoredups and ignorespace
 export HISTCONTROL=ignoreboth
 
+export HISTFILESIZE=10000
+
 # append to the history file, don't overwrite it
 shopt -s histappend
+shopt -s histverify
+export PROMPT_COMMAND='history -a'
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
+
 
 # make less more friendly for non-text input files, see lesspipe(1)
 #[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -118,3 +123,5 @@ export WORKON_HOME=/srv/python-environments/
 source /usr/local/bin/virtualenvwrapper.sh
 
 export PYTHONSTARTUP=~/dotfiles/pystartup
+
+export INPUTRC=~/dotfiles/inputrc
