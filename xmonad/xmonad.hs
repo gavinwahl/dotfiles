@@ -334,7 +334,7 @@ myLogHook = updatePointer (Relative 0.5 0.5)
 -- It will add initialization of EWMH support to your custom startup
 -- hook by combining it with ewmhDesktopsStartup.
 --
-myStartupHook = spawn "~/dotfiles/.xmonad_startup"
+myStartupHook = spawn "~/dotfiles/xmonad/xmonad_startup"
  
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
