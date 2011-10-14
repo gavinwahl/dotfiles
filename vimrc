@@ -137,3 +137,6 @@ let python_space_error_highlight = 1
 
 " strip trailing whitespace
 map gw :%s/\s\+$//:noh
+
+command Wcn w|cn
+cnoremap wcn Wcn
