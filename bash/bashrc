@@ -121,6 +121,7 @@ alias gu='cd `git rev-parse --show-toplevel`'
 alias mp='find -type f -iregex ".*\.\(mp3\|wmv\|mp4\|mkv\|flac\|avi\|iso\|vob\)$" -exec mplayer -cache 1000 {} +'
 
 export WORKON_HOME=/srv/python-environments/
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2.7
 source /usr/local/bin/virtualenvwrapper.sh
 
 export PYTHONSTARTUP=~/dotfiles/pystartup
