@@ -117,7 +117,7 @@ export EC2_PRIVATE_KEY=/home/gavin/.ec2/pk-6AMBKDEA42QHRIKS23QGARCWVH3UVQZH.pem
 export EC2_CERT=/home/gavin/.ec2/cert-6AMBKDEA42QHRIKS23QGARCWVH3UVQZH.pem
 export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
 
-alias gu='cd `git rev-parse --show-toplevel`'
+alias gu='git rev-parse --show-toplevel > /dev/null && cd `git rev-parse --show-toplevel`'
 alias mp='find -type f -iregex ".*\.\(mp3\|wmv\|mp4\|mkv\|flac\|avi\|iso\|vob\)$" -exec mplayer -cache 1000 {} +'
 
 export WORKON_HOME=/srv/python-environments/
@@ -127,3 +127,5 @@ source /usr/local/bin/virtualenvwrapper.sh
 export PYTHONSTARTUP=~/dotfiles/pystartup
 
 export INPUTRC=~/dotfiles/inputrc
+alias w=workon
+alias tags="ctags '--exclude=*.min.*' --exclude='*/CACHE/*' -R"
