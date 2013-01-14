@@ -3,7 +3,7 @@ set nocompatible
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
-set nobackup	
+set nobackup
 set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
@@ -61,7 +61,7 @@ set ignorecase
 set shiftwidth=2
 cmap W w
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
-map <Leader>g :Ack 
+map <Leader>g :Ack
 "map <Return> :
 set wildignore+=*.pyc
 set wildmenu
@@ -93,6 +93,9 @@ map g' :s/<?\%(php\)\? echo \(.\{-}\); ?>/'. \1 .'/g:noh
 "string concatenation to php echo tags
 map g< :s/'\. \?\(.\{-}\) \{-}\. \{-}'/<?php echo \1; ?>/g:noh
 
+" 'assert False' on the preceding line
+nmap <Leader>a Oassert False
+
 " Ctrl-j/k deletes blank line below/above, and Alt-O/o inserts.
 nnoremap <silent><C-j> m`:silent +g/\m^\s*$/d<CR>``:noh<CR>
 nnoremap <silent><C-k> m`:silent -g/\m^\s*$/d<CR>``:noh<CR>
@@ -123,7 +126,7 @@ function! GitGrep(args)
     exec "redraw!"
 endfunction
 
-func GitGrepword()
+function! GitGrepword()
   normal! "zyiw
   call GitGrep(getreg('z'))
 endf
@@ -140,7 +143,13 @@ map gw :%s/\s\+$//:noh
 
 command Wcn w|cn
 cnoremap wcn Wcn
+vmap <Tab> >gv
 
+call pathogen#infect()
+
+let g:pyflakes_use_quickfix = 0
+
+nmap <Leader>e :CommandTTag<CR>
 
 function! GetCurrentPythonClass()
     call search('^\s*class \ze\S\+\s*(', 'sbe')
