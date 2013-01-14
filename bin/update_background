@@ -1,6 +1,5 @@
 #! /bin/bash
 trim() { echo $1; }
-<<<<<<< HEAD
 url=`curl --silent 'http://toolserver.org/~magnus/catfood.php?category=Featured_pictures_on_Wikimedia_Commons' | grep '</link>$'|head -n 2|tail -n 1|sed 's/<link>//' | sed 's/<\/link>//'`
 img_url=$(curl -sL "` trim "$url"`" |grep fullImageLink | sed 's/.*<a href="\([^"]*\)">.*/http:\1/')
 curl -s "$img_url" > /tmp/daily_background
