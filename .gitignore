@@ -10,3 +10,4 @@
 /xmonad/xmonad.o
 command-t/*.log
 command-t/Makefile
+*.spl
