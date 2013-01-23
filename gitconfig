@@ -27,6 +27,7 @@
   unstash = !git stash show -p | git apply -R
   who = !git shortlog -s -- | sort -r
   br = branch
+  mm = merge --no-commit --no-ff
 [push]
   default = matching
 [color]

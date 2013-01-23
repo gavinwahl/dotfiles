@@ -221,7 +221,7 @@ if &t_Co > 255
 
     " spellchecking, always "bright" background
     hi SpellLocal ctermfg=14  ctermbg=237
-    hi SpellBad   ctermfg=9   ctermbg=237
+    hi SpellBad   cterm=bold ctermbg=235
     hi SpellCap   ctermfg=12  ctermbg=237
     hi SpellRare  ctermfg=13  ctermbg=237
 
