@@ -2,5 +2,5 @@
 function rmd() {
   thisdir=`pwd`
   cd ..
-  rmdir "$thisdir"
+  rmdir "$thisdir" || cd "$thisdir"
 }
