@@ -2,6 +2,4 @@
 trim() { echo $1; }
 url=`curl --silent 'http://toolserver.org/~magnus/catfood.php?category=Featured_pictures_on_Wikimedia_Commons' | grep '</link>$'|head -n 2|tail -n 1|sed 's/<link>//' | sed 's/<\/link>//'`
 img_url=$(curl -sL "` trim "$url"`" |grep fullImageLink | sed 's/.*<a href="\([^"]*\)">.*/http:\1/')
-curl -s "$img_url" > /tmp/daily_background
-convert /tmp/daily_background -resize '3200x1200^' /tmp/daily_background
-xsetbg -center /tmp/daily_background &
+set_background "$img_url"
