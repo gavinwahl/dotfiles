@@ -39,3 +39,5 @@
 [core]
   excludesfile = ~/dotfiles/gitignore
   autocrlf = false
+[init]
+  templatedir=~/dotfiles/git_template
