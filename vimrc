@@ -63,7 +63,7 @@ cmap W w
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 map <Leader>g :Ack
 "map <Return> :
-set wildignore+=*.pyc
+set wildignore+=*.pyc,build/*,CACHE/*
 set wildmenu
 let html_use_css=1
 set cot+=menuone
