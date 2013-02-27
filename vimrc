@@ -180,3 +180,5 @@ function! GetCurrentPythonArgs()
     normal ''
     return args
 endfunction
+
+map <F2> :set spell!<RETURN>
