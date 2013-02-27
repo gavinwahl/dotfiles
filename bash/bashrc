@@ -120,3 +120,4 @@ source /usr/local/bin/virtualenvwrapper.sh
 export PYTHONSTARTUP=~/dotfiles/pystartup
 
 export INPUTRC=~/dotfiles/inputrc
+export BROWSER=google-chrome
