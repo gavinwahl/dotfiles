@@ -3,4 +3,5 @@ cscope.*
 wkhtmltopdf
 .*.swp
 .*.swo
+.*.swn
 .swp
