@@ -84,3 +84,6 @@ snippet ifmain
 # __magic__
 snippet _
 	__${1:init}__${2}
+
+snippet sup
+	super(`GetCurrentPythonClass()`, `GetFirstPythonArg()`).`GetCurrentPythonMethod()`(${1:`GetCurrentPythonArgs()`})${2}
