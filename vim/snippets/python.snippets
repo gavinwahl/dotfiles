@@ -86,4 +86,4 @@ snippet _
 	__${1:init}__${2}
 
 snippet sup
-	super(`GetCurrentPythonClass()`, `GetFirstPythonArg()`).`GetCurrentPythonMethod()`(${1:`GetCurrentPythonArgs()`})${2}
+	super(`GetCurrentPythonClass()`, `GetFirstPythonArg()`).`GetCurrentPythonMethod()`(`GetCurrentPythonArgs()`)${2}

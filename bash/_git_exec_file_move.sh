@@ -6,28 +6,28 @@
 #-------------------------------------------------------
 git_info() {
   check_git || return
-  git_dir=$(git rev-parse --git-dir 2> /dev/null)
+  git_dir=$(g rev-parse --git-dir 2> /dev/null)
 
   case $1 in
     -b | --branch)
       if [[ -d "$git_dir/rebase-apply" ]] ; then
-        branch="$(git symbolic-ref HEAD 2>/dev/null)"
+        branch="$(g symbolic-ref HEAD 2>/dev/null)"
       elif [[ -f "$git_dir/rebase-merge/interactive" ]] ; then
         branch="$(cat $git_dir/rebase-merge/head-name)"
       elif [[ -d "$git_dir/rebase-merge" ]] ; then
         branch="$(cat $git_dir/rebase-merge/head-name)"
       elif [[ -f "$git_dir/MERGE_HEAD" ]] ; then
-        branch="$(git symbolic-ref HEAD 2>/dev/null)"
+        branch="$(g symbolic-ref HEAD 2>/dev/null)"
       else
-        branch="$(git symbolic-ref HEAD 2>/dev/null)" || \
-          branch="$(git describe --exact-match HEAD 2>/dev/null)" || \
+        branch="$(g symbolic-ref HEAD 2>/dev/null)" || \
+          branch="$(g describe --exact-match HEAD 2>/dev/null)" || \
           branch="$(cut -c1-7 $git_dir/HEAD)..."
       fi
       echo "${branch#refs/heads/}"
       return 1
       ;;
     -s | --dirty)
-      if [[ ! "$(git status 2>/dev/null)" =~ 'nothing to commit' ]]; then
+      if [[ ! "$(g status 2>/dev/null)" =~ 'nothing to commit' ]]; then
         echo '*'
       fi
       return 1
@@ -45,7 +45,7 @@ git_info() {
 __git_exec_file_move()
 {
   local remote=""
-  local branch=$(git branch|grep \*|awk '{print $2;}')
+  local branch=$(g branch|grep \*|awk '{print $2;}')
   local command=$1
   shift
 
@@ -74,11 +74,11 @@ __git_exec_file_move()
     return
   fi
 
-  remote=$(git config branch.${branch}.remote)
+  remote=$(g config branch.${branch}.remote)
   if [ -z "$remote" ]; then
     echo "There is no matching remote for branch '${branch}' in your .git/config file.  Defaulting to remote 'origin'."
     remote="origin"
   fi
 
-  git $command $remote $branch
+  g $command $remote $branch
 }

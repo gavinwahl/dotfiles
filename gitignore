@@ -5,3 +5,5 @@ wkhtmltopdf
 .*.swo
 .*.swn
 .swp
+.coverage
+htmlcov

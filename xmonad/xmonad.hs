@@ -98,11 +98,13 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     , ((modm .|. shiftMask, xK_f), bringSelected defaultGSConfig)
 
-    , ((modm, xK_s), scratchpadSpawnActionTerminal "xterm")
+    , ((modm, xK_s), scratchpadSpawnActionCustom "tabbed -n scratchpad xterm -into")
 
     , ((modm, xK_u), spawn "pkill dzen2" >> focusUrgent)
 
-    , ((controlMask .|. modm, xK_l), spawn "xscreensaver-command -lock")
+    --, ((controlMask .|. modm, xK_l), spawn "xscreensaver-command -lock")
+    , ((controlMask .|. modm, xK_p), spawn "setxkbmap us -variant colemak; xmodmap ~/dotfiles/Xmodmap")
+    , ((controlMask .|. modm, xK_l), spawn "setxkbmap us; xmodmap ~/dotfiles/Xmodmap")
     , ((mod4Mask, xK_l), spawn "xscreensaver-command -lock")
 
     -- launch dmenu
@@ -284,12 +286,10 @@ myLayout = mkToggle (single FULL) $ tiled ||| Mirror tiled ||| Full ||| Grid |||
 -- 'className' and 'resource' are used below.
 --
 myManageHook = composeAll
-    [ className =? "MPlayer"        --> doFloat
-    , className =? "Gimp"           --> doFloat
-    , resource  =? "desktop_window" --> doIgnore
-    , resource  =? "kdesktop"       --> doIgnore
+    [ className =? "Icedove"        --> doShift "8"
+    , className =? "Pidgin"         --> doShift "9"
+    , title =? "gwahl@fusionbox.com - Fusionbox" --> doShift "8"
     , scratchpadManageHookDefault
-
     ]
  
 ------------------------------------------------------------------------

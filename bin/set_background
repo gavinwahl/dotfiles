@@ -2,6 +2,6 @@
 if [[ $# == 1 ]]
 then
   curl -s "$1" > ~/.desktop_background
-  convert ~/.desktop_background -resize '3200x1200^' ~/.desktop_background
+  convert ~/.desktop_background -resize '3840x1200^' ~/.desktop_background
 fi
 xsetbg -center ~/.desktop_background &

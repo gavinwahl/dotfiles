@@ -27,7 +27,7 @@
   unstash = !git stash show -p | git apply -R
   who = !git shortlog -s -- | sort -r
   br = branch
-  mm = merge --no-commit --no-ff
+  mm = merge --no-commit --no-ff --log
 [push]
   default = matching
 [color]
@@ -41,3 +41,16 @@
   autocrlf = false
 [init]
   templatedir=~/dotfiles/git_template
+[merge]
+	tool = meld
+
+[sendemail]
+  chainreplyto = false
+  smtpserver = smtp.googlemail.com
+  smtpencryption = ssl
+  smtpserverport = 465
+  smtpuser = gwahl@fusionbox.com
+  from = gwahl@fusionbox.com
+
+[sendemail "fusionbox"]
+  to = programmers@fusionbox.com

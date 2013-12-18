@@ -182,3 +182,11 @@ function! GetCurrentPythonArgs()
 endfunction
 
 map <F2> :set spell!<RETURN>
+" copy filename into clipboard
+map <F3> :let @*=@%<RETURN>
+
+let g:neocomplcache_enable_fuzzy_completion=1
+let g:neocomplcache_auto_completion_start_length=2
+let g:neocomplcache_enable_at_startup=1
+
+highlight SignColumn ctermbg=237

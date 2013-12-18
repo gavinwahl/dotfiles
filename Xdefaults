@@ -2,4 +2,20 @@ XTerm*background: #3a3a3a
 XTerm*foreground: #dfdfdf
 XTerm*font: -*-terminus-medium-*-*-*-14-*-*-*-*-*-*-*
 XTerm*termName:         xterm-256color
-xterm*faceName: terminus:pixelsize=14
+
+XTerm*color0:  #1E2320
+XTerm*color1:  #d78787
+XTerm*color2:  #87af87
+XTerm*color3:  #dfaf8f
+XTerm*color4:  #506070
+XTerm*color5:  #dc8cc3
+XTerm*color6:  #8cd0d3
+XTerm*color7:  #dcdccc
+XTerm*color8:  #709080
+XTerm*color9:  #d78787
+XTerm*color10: #87af87
+XTerm*color11: #f0dfaf
+XTerm*color12: #94bff3
+XTerm*color13: #ec93d3
+XTerm*color14: #93e0e3
+XTerm*color15: #ffffff
