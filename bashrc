@@ -5,3 +5,4 @@ done;
 
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 source /usr/share/bash-completion/completions/git
+export PATH=$PATH:$HOME/.cabal/bin
