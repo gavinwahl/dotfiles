@@ -115,7 +115,10 @@ export EC2_CERT=/home/gavin/.ec2/cert-6AMBKDEA42QHRIKS23QGARCWVH3UVQZH.pem
 export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
 
 export WORKON_HOME=/srv/python-environments/
-source /usr/local/bin/virtualenvwrapper.sh
+if [ -f "/usr/local/bin/virtualenvwrapper.sh" ]
+then
+  source /usr/local/bin/virtualenvwrapper.sh
+fi
 
 export PYTHONSTARTUP=~/dotfiles/pystartup
 
