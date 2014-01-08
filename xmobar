@@ -7,8 +7,8 @@ Config { font = "Terminus"
                     , Run Memory ["-t","Mem: <usedratio>%"] 10
                     , Run Date "%a %b %_d %l:%M" "date" 10
                     , Run StdinReader
-                    , Run Com "~/dotfiles/bin/only_uptime.sh" [] "load" 10
-                    , Run Com "sh" ["~/dotfiles/bin/gmail.sh"] "mail" 1000
+                    , Run Com "/home/gavin/dotfiles/bin/only_uptime.sh" [] "load" 10
+                    , Run Com "bash" ["/home/gavin/dotfiles/bin/gmail.sh"] "mail" 1000
                     ]
        , sepChar = "%"
        , alignSep = "}{"
