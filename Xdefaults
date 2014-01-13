@@ -1,6 +1,6 @@
 XTerm*background: #3a3a3a
 XTerm*foreground: #dfdfdf
-XTerm*font: -*-terminus-medium-*-*-*-14-*-*-*-*-*-*-*
+XTerm*font: -*-terminus-medium-r-*-*-14-*-*-*-*-*-*-*
 XTerm*termName:         xterm-256color
 
 XTerm*color0:  #1E2320
