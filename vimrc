@@ -190,3 +190,4 @@ let g:neocomplcache_auto_completion_start_length=2
 let g:neocomplcache_enable_at_startup=1
 
 highlight SignColumn ctermbg=237
+let g:flake8_max_line_length=99
