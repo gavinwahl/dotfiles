@@ -67,6 +67,7 @@ set wildignore+=*.pyc,build/*,CACHE/*
 set wildmenu
 let html_use_css=1
 set cot+=menuone
+set directory=~/.vim/swap/
 set undodir=~/.vim/undodir/
 set undofile
 set undolevels=5000
