@@ -63,7 +63,7 @@ cmap W w
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 map <Leader>g :Ack
 "map <Return> :
-set wildignore+=*.pyc,build/*,CACHE/*
+set wildignore+=*.pyc,build/*,CACHE/*,*/node_modules/*
 set wildmenu
 let html_use_css=1
 set cot+=menuone
@@ -192,3 +192,19 @@ let g:neocomplcache_enable_at_startup=1
 
 highlight SignColumn ctermbg=237
 let g:flake8_max_line_length=99
+
+let g:ale_linters = {'python': ['pyls']}
+
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
+endfunction 
+
+let g:coc_global_extensions = ['coc-css', 'coc-fish', 'coc-db', 'coc-eslint', 'coc-html', 'coc-htmldjango', 'coc-json', 'coc-lua', 'coc-marketplace', 'coc-prisma', 'coc-rust-analyzer', 'coc-scssmodules', 'coc-sql', 'coc-terminal', 'coc-tsserver', '@yaegassy/coc-volar', '@yaegassy/coc-tailwindcss3', 'coc-sqlfluff', 'coc-stylelintplus']

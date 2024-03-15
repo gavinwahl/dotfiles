@@ -7,3 +7,4 @@ wkhtmltopdf
 .swp
 .coverage
 htmlcov
+.vscode/

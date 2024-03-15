@@ -19,3 +19,4 @@ UserCreationForm
 ModelForm
 Widgy
 versioned
+entrypoint
