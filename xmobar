@@ -26,5 +26,5 @@ Config { font = "Iosevka Term SS04 14"
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "<fc=#ee9a00>%date%</fc> } %StdinReader% { %battery% | %load% | %cpu% | %memory% | %KDEN%%mail%"
+       , template = "<fc=#ee9a00>%date%</fc> } %StdinReader% { %battery% | %load% | %cpu% | %memory% | %KDEN%"
        }
