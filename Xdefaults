@@ -1,6 +1,6 @@
 XTerm*background: #3a3a3a
 XTerm*foreground: #dfdfdf
-XTerm*font: -*-terminus-medium-r-*-*-14-*-*-*-*-*-*-*
+! XTerm*font: -*-terminus-medium-*-*-*-18-*-*-*-*-*-*-*
 XTerm*termName:         xterm-256color
 
 XTerm*color0:  #1E2320
@@ -19,3 +19,8 @@ XTerm*color12: #94bff3
 XTerm*color13: #ec93d3
 XTerm*color14: #93e0e3
 XTerm*color15: #ffffff
+XTerm.vt100.scrollBar: false
+XTerm.vt100.BorderWidth: 0
+! XTerm*faceName: FiraMono Nerd Font Mono
+XTerm*faceName: Iosevka Term SS04
+XTerm*faceSize: 14
