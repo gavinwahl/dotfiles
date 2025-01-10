@@ -1,4 +1,4 @@
-Config { font = "Terminus"
+Config { font = "Iosevka Term SS04 14"
        , bgColor = "black"
        , fgColor = "grey"
        , position = Bottom
@@ -8,9 +8,23 @@ Config { font = "Terminus"
                     , Run Date "%a %b %_d %l:%M" "date" 10
                     , Run StdinReader
                     , Run Com "/home/gavin/dotfiles/bin/only_uptime.sh" [] "load" 10
-                    , Run Com "bash" ["/home/gavin/dotfiles/bin/gmail.sh"] "mail" 1000
+                    , Run Battery        [ "--template" , "Batt: <acstatus>"
+                                         , "--Low"      , "10"        -- units: %
+                                         , "--High"     , "80"        -- units: %
+                                         , "--low"      , "darkred"
+                                         , "--normal"   , "darkorange"
+                                         , "--high"     , "darkgreen"
+
+                                         , "--" -- battery specific options
+                                                   -- discharging status
+                                                   , "-o"	, "<left>% (<timeleft>)"
+                                                   -- AC "on" status
+                                                   , "-O"	, "<fc=#dAA520>Charging</fc>"
+                                                   -- charged status
+                                                   , "-i"	, "<fc=#006000>Charged</fc>"
+                                         ] 50
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "<fc=#ee9a00>%date%</fc> } %StdinReader% { %load% | %cpu% | %memory% | %KDEN%%mail%"
+       , template = "<fc=#ee9a00>%date%</fc> } %StdinReader% { %battery% | %load% | %cpu% | %memory% | %KDEN%%mail%"
        }
