@@ -3,7 +3,6 @@ import XMonad.Layout.LayoutCombinators
 import Data.Monoid
 import System.Exit
 import XMonad.Actions.GridSelect
-import XMonad.Util.Scratchpad
 import XMonad.Actions.UpdatePointer
 import XMonad.Hooks.UrgencyHook
 import XMonad.Actions.SpawnOn
@@ -94,11 +93,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- launch a terminal
     [ ((modm, xK_Return), spawn $ XMonad.terminal conf)
 
-    , ((modm, xK_f), goToSelected defaultGSConfig)
+    , ((modm, xK_f), goToSelected def)
 
-    , ((modm .|. shiftMask, xK_f), bringSelected defaultGSConfig)
-
-    , ((modm, xK_s), scratchpadSpawnActionCustom "tabbed -n scratchpad xterm -into")
+    , ((modm .|. shiftMask, xK_f), bringSelected def)
 
     , ((modm, xK_u), spawn "pkill dzen2" >> focusUrgent)
 
@@ -184,11 +181,11 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. shiftMask, xK_Right), shiftNextScreen)
     , ((modm .|. shiftMask, xK_Left),  shiftPrevScreen)
     , ((modm,               xK_z),     toggleWS)
-    , ((modm     , xK_g), moveTo Next EmptyWS)  -- find a free workspace
-    , ((modm .|. shiftMask, xK_g), shiftTo Next EmptyWS)  -- move to a free workspace
+    , ((modm     , xK_g), moveTo Next emptyWS)  -- find a free workspace
+    , ((modm .|. shiftMask, xK_g), shiftTo Next emptyWS)  -- move to a free workspace
     --- I have no idea what this does!
     , ((modm .|. controlMask, xK_Right),        -- a crazy keybinding!
-        findWorkspace getSortByXineramaRule Next NonEmptyWS 2 >>= windows . W.view)
+        findWorkspace getSortByXineramaRule Next (Not emptyWS) 2 >>= windows . W.view)
 
     , ((modm,               xK_i     ), sendMessage $ Toggle FULL)
     , ((modm,               xK_F1    ), sendMessage $ JumpToLayout "Tall" )
@@ -288,7 +285,6 @@ myManageHook = composeAll
     [ className =? "Icedove"        --> doShift "8"
     , className =? "Pidgin"         --> doShift "9"
     , title =? "gwahl@fusionbox.com - Fusionbox" --> doShift "8"
-    , scratchpadManageHookDefault
     ]
 
 ------------------------------------------------------------------------
@@ -342,7 +338,7 @@ myStartupHook = spawn "~/dotfiles/xmonad/xmonad_startup"
 --
 main = do
   xmobar <- spawnPipe "xmobar -b ~/dotfiles/xmobar"
-  xmonad $ withUrgencyHook myUrgencyHook $ defaultConfig {
+  xmonad $ docks $ withUrgencyHook myUrgencyHook $ def {
       -- simple stuff
         terminal           = myTerminal,
         focusFollowsMouse  = myFocusFollowsMouse,
