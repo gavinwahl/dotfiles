@@ -4,6 +4,7 @@
 /vim/ruby/command-t/*.o
 /vim/ruby/command-t/*.so
 /vim/undodir/*
+/vim/swap/*
 /xmonad/xmonad-x86_64-linux
 /xmonad/xmonad.errors
 /xmonad/xmonad.hi
